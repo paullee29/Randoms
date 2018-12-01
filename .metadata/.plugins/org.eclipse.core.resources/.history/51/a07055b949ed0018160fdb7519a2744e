@@ -1,0 +1,47 @@
+package client.Main;
+
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import javax.json.*;
+
+public class SocrataTax {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	}
+	
+	public JSONArray getJSONFromUrl(String url) {
+	    JSONArray jsonArray = null;
+
+	    try {
+	        URL u = new URL(url);
+	        httpURLConnection = (HttpURLConnection) u.openConnection();
+	        httpURLConnection.setRequestMethod("GET");
+	        bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+	        stringBuilder = new StringBuilder();
+
+	        while ((line = bufferedReader.readLine()) != null) {
+	            stringBuilder.append(line + '\n');
+	        }
+	        jsonString = stringBuilder.toString();
+	    } catch (MalformedURLException e) {
+	        e.printStackTrace();
+	    } catch (ProtocolException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    } finally {
+	        httpURLConnection.disconnect();
+	    }
+
+	    try {
+	        jsonArray = new JSONArray(jsonString);
+	    } catch (JSONException e) {
+	        e.printStackTrace();
+	    }
+
+	    return jsonArray;
+
+}

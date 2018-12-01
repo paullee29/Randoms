@@ -1,0 +1,317 @@
+package sample.hello.util;
+import java.lang.*;
+import java.net.*;
+import java.util.*;
+import java.io.*;
+public class SING_UTIL
+{
+	public static void sleep(int milli_sec)
+	{
+		try
+		{
+			Thread.sleep(milli_sec);
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public static boolean is_all_integer(String str)
+	{
+
+		if ((str == null) || (str.length() <=0)) return false;
+		char[]  ca=str.toCharArray();
+		for (int i = 0; i< ca.length; i++)
+		{
+			if (!(Character.isDigit(ca[i])))
+				return false;
+		}
+		return true;
+	}
+	public static boolean send_file(String in_data, PrintWriter send_to_client)
+	{
+		/* copy|f_file|to_file*/
+		File_io fio = new File_io();
+		String source_f= fio.get_my_pattern(in_data, "not_use", "|", 2, true);
+		String dest_f= fio.get_my_pattern(in_data, "not_use", "|", 2, false);
+		boolean ok = fio.open_file_to_r(source_f);
+		if (!ok) return false;
+		String send_data = null;
+		send_data = "WRITE_FILE|" + dest_f;
+		send_to_client.println(send_data);
+		send_data = null;
+		while ( (send_data = fio.get_line()) != null)
+			send_to_client.println(send_data);
+		fio.close_r_file();
+		return true;
+	}
+
+	public static String get_string_between_token(String in_str, 
+				String first_token, String second_token)
+	{
+		String tmp_str=null;
+		/* get string after the first_token */
+		if (in_str == null) return null;
+		int pos =in_str.indexOf(first_token); /* the first occurrence */
+		int len = first_token.length();
+		if (pos < 0 ) return null;
+		String var_name = in_str.substring(pos+len, in_str.length());
+		var_name=var_name.trim();
+		if (var_name.length() <=0 ) return null;
+		if (var_name.indexOf(second_token) < 0)
+		{
+			// System.out.println("last value to get: " + first_token +"="+ var_name);
+			return var_name;
+		}
+		/* get string before the second_token */
+		pos =var_name.indexOf(second_token);
+		if (pos <= 0 ) return null;
+		tmp_str = var_name.substring(0, pos );
+		var_name=tmp_str.trim();
+		if (var_name.length() <=0 ) return null;
+		return var_name;
+	}
+	public static String get_string_after_token(String in_str, String token)
+	{
+		int pos =in_str.indexOf(token);
+		int len = token.length();
+		if (pos < 0 ) return null;
+		String var_name = in_str.substring(pos+len, in_str.length());
+		var_name=var_name.trim();
+		if (var_name.length() <=0 ) return null;
+		return var_name;
+	}
+	public static String get_string_before_token(String in_str, String token)
+	{
+		int pos =in_str.indexOf(token);
+		if (pos < 0 ) return null;
+		String var_name = in_str.substring(0, pos );
+		var_name=var_name.trim();
+		if (var_name.length() <=0 ) return null;
+		return var_name;
+	}
+	public static String get_first_element(String in_str)
+	{
+		String chk_str = null;
+		String val_str = null;
+		String search_tok = null;
+		int len = in_str.length();
+		if (len <= 0) return null;
+		for (int j = 0; j < len; j++)
+		{
+			if (in_str.charAt(j) == '-')
+			{
+				search_tok = "-";
+				break;
+			}
+			if (in_str.charAt(j) == '*')
+			{
+				search_tok = "*";
+				break;
+			}
+			if (in_str.charAt(j) == '/')
+			{
+				search_tok = "/";
+				break;
+			}
+			if (in_str.charAt(j) == '+')
+			{
+				search_tok = "+";
+				break;
+			}
+		}
+		if (search_tok != null)
+			val_str  = get_string_before_token(in_str, search_tok);
+		else val_str = in_str;
+		return val_str;
+	}
+	public static String get_last_element(String in_str)
+	{
+		String val_str = null;
+		String search_tok = null;
+		int len = in_str.length();
+		if (len <=0) return null;
+		int j = len-1;
+		for (j = len-1; j >=0; j--)
+		{
+			if (in_str.charAt(j) == '-')
+			{
+				search_tok = "-";
+				break;
+			}
+			if (in_str.charAt(j) == '+')
+			{
+				search_tok = "+";
+				break;
+			}
+			if (in_str.charAt(j) == '*')
+			{
+				search_tok = "*";
+				break;
+			}
+			if (in_str.charAt(j) == '/')
+			{
+				search_tok = "/";
+				break;
+			}
+		}
+		if (search_tok == null) val_str= in_str;
+		else
+			val_str  = in_str.substring(j+1, len);
+		// System.out.println("get last return " + val_str);
+		return val_str;
+	}
+
+	/* looking for delimeter | */
+	public static  Hashtable store_tag_value(String in_data, File_io fio, String del)
+	{
+		int num_token = fio.get_token_number(in_data, del);	
+		String tmp_str = "";
+		String tag="";
+		String value="";
+		Hashtable t_hash = new Hashtable();
+		t_hash.clear();
+		/* only tag=value */
+		if (num_token == 0)
+		{
+			if (in_data.indexOf("=") < 0)
+			{
+				System.out.println("Error: Incorrect data from NBI Client Interface Software " + in_data);
+				return t_hash;
+			}
+			value = SING_UTIL.get_string_after_token(in_data, "=");
+			tag = SING_UTIL.get_string_before_token(in_data, "=");
+			t_hash.put(tag, value);
+			return t_hash;
+		} else /* only tag1=value1@tag2=value2@...*/
+		{
+			for (int idx = 1; idx <=num_token; idx++)
+			{
+				tmp_str = fio.get_my_pattern(in_data, "not_use", del, idx, true); 			
+				if (tmp_str.indexOf("=") < 0)
+				{
+					System.out.println("Error: Incorrect data from NBI Client Interface Software " + in_data);
+				} else
+				{
+					value = SING_UTIL.get_string_after_token(tmp_str, "=");
+					tag = SING_UTIL.get_string_before_token(tmp_str, "=");
+					if (value == null)
+					{
+						value = "";
+						fio.log_data("Parser Error - NBI_ATTENTION: tag=" + tag + " value is NULL");
+					}
+					t_hash.put(tag, value);
+				}
+				if (idx == num_token)
+				{
+					tmp_str = fio.get_my_pattern(in_data, "not_use", del, idx, false); 			
+					if (tmp_str.indexOf("=") < 0)
+					{
+						System.out.println("Parser Error: Incorrect data from NBI Client Interface Software " + in_data);
+						continue;
+					}
+					value = SING_UTIL.get_string_after_token(tmp_str, "=");
+					tag = SING_UTIL.get_string_before_token(tmp_str, "=");
+					if (value == null)
+					{
+						value = "";
+						fio.log_data("Parser Error - NBI_ATTENTION: tag=" + tag + " value is NULL");
+					}
+					t_hash.put(tag, value);
+				}
+			}
+		}
+		return t_hash;
+	}
+
+	/* a duplicat from File_io.java */
+	public static int get_token_number(String in_data, String token)
+	{
+		int c_idx=0;
+		int c_count = 0;
+		String ret_str=null;
+		while (true)
+		{
+			int idx = in_data.indexOf(token, c_idx);
+			if (idx ==-1 ) 
+			{
+				return c_count;
+			}
+		    else 
+			  c_count++;
+			c_idx=idx +1;
+		}
+	}
+	/* EquipmentHolder=  /rack=xx/shelf=xx/sub_shelf=hh/slot=xx/sub_slot=nn/port=yyy */
+	/* p_str=  /rack=xx/shelf=xx/slot=xx/port=yyy */
+	/* p_str=  /rack=xx/shelf=xx/slot=xx/sub_slot=nn/port=yyy */
+	/* p_str=  /rack=xx/shelf=xx/sub_shelf=hh/slot=xx/sub_slot=nn/port=yyy */
+	/* p_h_t is null */
+	public static Hashtable break_eq_holder_aid(String p_str, Hashtable p_h_t, File_io fio)
+	{
+		Hashtable h_t=p_h_t;
+		String rack="";
+		String shelf="";
+		String slot="";
+		String port="";
+		String sub_slot="";
+		String sub_shelf="";
+		/* assuming all equipmentHolders or PTP must have  rack and shelf */
+		if (p_str == null) return null;
+		if ((p_str.indexOf("rack=") < 0) || ((p_str.indexOf("shelf=") < 0)))
+		{
+			fio.log_data("Parser Error: - Invalid AID format or values. No rack or shelf. " + p_str);
+			return null;
+		}
+		rack = SING_UTIL.get_string_between_token(p_str, "rack=", "/");
+		shelf = SING_UTIL.get_string_between_token(p_str, "shelf=", "/");
+		if (p_str.indexOf("sub_shelf") >=0)
+		{
+			sub_shelf = SING_UTIL.get_string_between_token(p_str, "sub_shelf=", "/");
+			my_put(h_t, "sub_shelf", sub_shelf);
+		}
+		if (p_str.indexOf("sub_slot") >=0)
+		{
+			sub_slot = SING_UTIL.get_string_between_token(p_str, "sub_slot=", "/");
+			my_put(h_t, "sub_slot", sub_slot);
+		}
+		if (p_str.indexOf("slot=") >=0)
+		{
+			slot = SING_UTIL.get_string_between_token(p_str, "slot=", "/");
+			if (slot == null)
+			{
+				fio.log_data("Parser Error: - Invalid AID format for slot. " + p_str);
+				return null;
+			}
+			my_put(h_t, "slot", slot);
+		}
+		if (p_str.indexOf("port=") >=0)
+		{
+			port = SING_UTIL.get_string_between_token(p_str, "port=", "/");
+			if 	( port == null)
+			{
+				fio.log_data(": Parser Error: - Invalid AID format for port. " + p_str);
+				return null;
+			}
+			my_put(h_t, "port", port);
+		}
+		if (( rack == null) ||
+			( shelf == null) )
+		{
+			fio.log_data(": Parser Error: - Invalid AID format for rack or shelf. " + p_str);
+			return null;
+		}
+		my_put(h_t, "rack", rack);
+		my_put(h_t, "shelf", shelf);
+		/* if p_h_t is not null 
+		 * get the value out from it
+		 */
+		if (p_h_t != null) {};
+		return h_t;
+	}
+
+	public static void my_put(Hashtable h_t, String tag, String value)
+	{
+		if (value == null) value="";
+			h_t.put(tag, value);
+	}
+}

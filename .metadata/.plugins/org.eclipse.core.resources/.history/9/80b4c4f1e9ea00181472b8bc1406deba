@@ -1,0 +1,15 @@
+package client.Main;
+
+import client.Main.HttpURLConnectionRequest;
+
+public class Parser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		HttpURLConnectionRequest();
+		
+
+	}
+
+}

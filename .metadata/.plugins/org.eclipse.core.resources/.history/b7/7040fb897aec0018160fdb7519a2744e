@@ -1,0 +1,21 @@
+package client.utilities;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+
+import client.Main.HttpURLConnectionRequest;
+
+public class Utilities {
+	
+	public String dumpHTML(HttpURLConnection con) {
+		BufferedReader br = new BufferedReader (new InputStreamReader(con.getInputStream()));
+
+String inputLine;
+while ((inputLine = br.readLine()) != null) {
+     System.out.println(inputLine);
+}
+br.close();
+	}
+
+}

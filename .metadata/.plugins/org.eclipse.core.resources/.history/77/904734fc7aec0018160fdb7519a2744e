@@ -1,0 +1,49 @@
+package client.Main;
+
+import java.io.IOException;
+import java.util.Scanner;
+import client.utilities.*;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Parser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String url = null;
+		Scanner sc = new Scanner(System.in);
+		url = sc.nextLine();
+		
+		
+		
+		//USING HTTPURLCONNECTION REST
+		
+		HttpURLConnectionRequest con = new HttpURLConnectionRequest();
+		try {
+			connection.sendGet(url);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		Utilities.dumpHTML(con);
+		
+		
+		// USING JSOUP
+//		try {
+//			Document doc = Jsoup.connect(url).get();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+		
+		
+		
+		
+
+	}
+
+}

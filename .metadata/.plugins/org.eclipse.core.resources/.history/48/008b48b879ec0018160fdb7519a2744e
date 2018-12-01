@@ -1,0 +1,27 @@
+package client.Main;
+
+import java.util.Scanner;
+
+import client.Main.HttpURLConnectionRequest;
+
+public class Parser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String url = null;
+		Scanner sc = new Scanner(System.in);
+		url = sc.nextLine();
+		
+		HttpURLConnectionRequest connection = new HttpURLConnectionRequest();
+		try {
+			connection.sendGet(url);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

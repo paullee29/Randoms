@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;rest.Client.resources.RestClient&apos; to &apos;HttpURLConnectionRequest&apos;&#x0D;&#x0A;- Original project: &apos;PaulRestClient&apos;&#x0D;&#x0A;- Original element: &apos;rest.Client.resources.RestClient&apos;&#x0D;&#x0A;- Renamed element: &apos;rest.Client.resources.HttpURLConnectionRequest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RestClient&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;rest.Client.resources{RestClient.java[RestClient" matchStrategy="1" name="HttpURLConnectionRequest" qualified="false" references="true" similarDeclarations="false" stamp="1542330769107" textual="false" version="1.0"/>
+</session>

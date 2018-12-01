@@ -1,0 +1,294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd" >
+<html>
+<head>
+<title>NJ Assessment Records Search</title>
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+<meta name="robots" content="noindex">
+
+<script language=JavaScript>
+function submit_click()
+   { document.all.normdiv.style.visibility="hidden";
+     document.all.waitdiv.style.visibility="visible"; } 
+function new_srch(ind)
+ {
+ var $tmp_val;
+ var $srch_type;
+ $srch_type=document.form1.srch_type.options[ind].value;
+ $tmp_val="prc6.cgi?&ms_user=monm&passwd=&district=1330&adv=0&out_type=0&srch_type=";
+ $tmp_val+=$srch_type;
+ location.replace($tmp_val) ;
+ }
+function new_cc(ind)
+ {
+ var $tmp_val;
+ var $tmp_val2;
+ $tmp_val2=document.form1.select_cc.options[ind].value;
+ $tmp_val="prc6.cgi?&ms_user=monm&passwd=&srch_type=0&adv=0&out_type=0&district=";
+ $tmp_val+=$tmp_val2;
+ location.replace($tmp_val) ;
+ }
+function new_dd(ind)
+ {
+ var $tmp_val;
+ var $tmp_val2;
+ $tmp_val2=document.form1.district.options[ind].value;
+ $tmp_val="prc6.cgi?&ms_user=monm&passwd=&srch_type=0&adv=0&out_type=0&district=";
+ $tmp_val+=$tmp_val2;
+ location.replace($tmp_val) ;
+ }
+function new_adv(ind)
+ {
+ var $tmp_val;
+ var $tmp_val2;
+ $tmp_val2=document.form1.adv.options[ind].value;
+ $tmp_val="prc6.cgi?&ms_user=monm&passwd=&district=1330&srch_type=0&out_type=0&adv=";
+ $tmp_val+=$tmp_val2;
+ location.replace($tmp_val) ;
+ }
+function new_out(ind)
+ {
+ var $tmp_val;
+ var $tmp_val2;
+ $tmp_val2=document.form1.out_type.options[ind].value;
+ $tmp_val="prc6.cgi?&ms_user=monm&passwd=&district=1330&srch_type=0&adv=0&out_type=";
+ $tmp_val+=$tmp_val2;
+ location.replace($tmp_val) ;
+ }
+</script>
+<style type="text/css">
+#normdiv { position:absolute; }
+#waitdiv { position:absolute; visibility:hide; }
+</style>
+</head>
+<body bgcolor=WHITE text=BLACK link=GOLDENROD vlink=RED 
+        alink=RED>
+<div id=normdiv>
+<form name=form1 method=post action=inf.cgi>
+<input type=hidden name=ms_user value=monm>
+<input type=hidden name=passwd value=>
+<p align=center></p>
+<table border=1 width=100% bordercolordark=#3055A3
+       bordercolorlight=#3055A3 >
+<tr>
+<td colspan=6 width=100% bgcolor=#3055A3 >
+<p align=center><b>
+<font face=Verdana color=WHITE >
+Assessment Records Search
+</font></b></p>
+</td></tr>
+
+<tr>
+<td><b>Step 1: Select Database: </b></td>
+<td>
+<select name=srch_type
+ onchange="new_srch(document.form1.srch_type.selectedIndex)">
+<option value=1 selected>Current Owners/Assmt List</option>
+<option value=2  >Deed/Sr1a List</option>
+</select>
+</td></tr>
+
+
+<tr>
+<td><b>Step 2: Select County: </b></td>
+<td><select name=select_cc 
+ onchange="new_cc(document.form1.select_cc.selectedIndex)">
+<option value=0101 >ATLANTIC</option>
+<option value=0201 >BERGEN</option>
+<option value=0301 >BURLINGTON</option>
+<option value=0401 >CAMDEN</option>
+<option value=0501 >CAPE MAY</option>
+<option value=0601 >CUMBERLAND</option>
+<option value=0701 >ESSEX</option>
+<option value=0801 >GLOUCESTER</option>
+<option value=0901 >HUDSON</option>
+<option value=1001 >HUNTERDON</option>
+<option value=1101 >MERCER</option>
+<option value=1201 >MIDDLESEX</option>
+<option value=1301 selected>MONMOUTH</option>
+<option value=1401 >MORRIS</option>
+<option value=1601 >PASSAIC</option>
+<option value=1701 >SALEM</option>
+<option value=1801 >SOMERSET</option>
+<option value=1901 >SUSSEX</option>
+<option value=2001 >UNION</option>
+<option value=2101 >WARREN</option>
+</select>
+</td></tr>
+
+<tr>
+<td><b>Step 3: Select District: </b></td>
+<td><select name=district 
+ onchange="new_dd(document.form1.district.selectedIndex)">
+<option value=1301 >ABERDEEN</option>
+<option value=1302 >ALLENHURST</option>
+<option value=1303 >ALLENTOWN</option>
+<option value=1304 >ASBURY PARK</option>
+<option value=1305 >ATLANTIC HIGHLANDS</option>
+<option value=1306 >AVON-BY-THE-SEA</option>
+<option value=1307 >BELMAR</option>
+<option value=1308 >BRADLEY BEACH</option>
+<option value=1309 >BRIELLE</option>
+<option value=1310 >COLTS NECK</option>
+<option value=1311 >DEAL</option>
+<option value=1312 >EATONTOWN</option>
+<option value=1313 >ENGLISHTOWN</option>
+<option value=1314 >FAIR HAVEN</option>
+<option value=1315 >FARMINGDALE</option>
+<option value=1316 >FREEHOLD BORO</option>
+<option value=1317 >FREEHOLD TOWNSHIP</option>
+<option value=1318 >HAZLET</option>
+<option value=1319 >HIGHLANDS</option>
+<option value=1320 >HOLMDEL</option>
+<option value=1321 >HOWELL</option>
+<option value=1322 >INTERLAKEN</option>
+<option value=1323 >KEANSBURG</option>
+<option value=1324 >KEYPORT</option>
+<option value=1325 >LITTLE SILVER</option>
+<option value=1326 >LOCH ARBOUR</option>
+<option value=1327 >LONG BRANCH</option>
+<option value=1328 >MANALAPAN</option>
+<option value=1329 >MANASQUAN</option>
+<option value=1330 selected>MARLBORO</option>
+<option value=1331 >MATAWAN</option>
+<option value=1332 >MIDDLETOWN</option>
+<option value=1333 >MILLSTONE</option>
+<option value=1334 >MONMOUTH BEACH</option>
+<option value=1335 >NEPTUNE TOWNSHIP</option>
+<option value=1336 >NEPTUNE CITY</option>
+<option value=1337 >OCEAN TOWNSHIP</option>
+<option value=1338 >OCEANPORT</option>
+<option value=1339 >RED BANK</option>
+<option value=1340 >ROOSEVELT</option>
+<option value=1341 >RUMSON</option>
+<option value=1342 >SEA BRIGHT</option>
+<option value=1343 >SEA GIRT</option>
+<option value=1344 >SHREWSBURY BORO</option>
+<option value=1345 >SHREWSBURY TOWNSHIP</option>
+<option value=1346 >LAKE COMO BORO</option>
+<option value=1347 >SPRING LAKE BORO</option>
+<option value=1348 >SPRING LAKE HEIGHTS</option>
+<option value=1349 >TINTON FALLS</option>
+<option value=1350 >UNION BEACH</option>
+<option value=1351 >UPPER FREEHOLD</option>
+<option value=1352 >WALL TOWNSHIP</option>
+<option value=1353 >WEST LONG BRANCH</option>
+<option value=1300 >ALL</option>
+</select></td>
+</tr>
+
+</select>
+</td>
+<tr>
+<td><b>Step 4: Select Search Format</b></td>
+<td><select name=adv 
+ onchange="new_adv(document.form1.adv.selectedIndex)">
+<option value=1 selected>Simple Search</option>
+<option value=2  >Advanced Search</option>
+</select></td>
+</tr>
+
+<tr>
+<td><b>Step 5: Select Output Format: </b></td>
+<td><select name=out_type
+ onchange="new_out(document.form1.out_type.selectedIndex)">
+<option value=1 selected>Single Line List Format</option>
+<option value=2  >Multi Line List Format</option>
+<option value=3  >Excel File Format</option>
+</select>
+</td></tr>
+
+<tr>
+<td><b>Step 6: List Items Per Page:</b></td>
+<td>
+<select name=ms_ln>
+<option value=10>10</option>
+<option value=20>20</option>
+<option value=50 selected>50</option>
+<option value=100>100</option>
+<option value=500>500</option>
+<option value=1000>1000</option>
+</select>
+</td></tr>
+
+<tr><td colspan=2><b>
+Step 7: Select/Enter Search Critera:
+</b>
+</td></tr>
+
+</font><table border=1 width=100%
+ bordercolordark=#3055A3 bordercolorlight=#3055A3 >
+<tr>
+<td colspan=6 width=100% bgcolor=#3055A3 >
+<p align=center><b>
+<font face=Verdana color=WHITE >
+Search Criteria
+</font></b></p>
+</td></tr>
+
+<tr>
+<td>Location:</td>
+<td><input type=text name=p_loc size=25 value=''></td>
+</tr>
+
+<tr>
+<td>Owner Name:</td>
+<td><input type=text name=owner size=35 value=''>
+</td></tr>
+
+<tr>
+<td>Block:</td>
+<td><input type=text name=block size=10></td>
+<td>Lot:</td>
+<td><input type=text name=lot size=10></td>
+<td>Qualifer:</td>
+<td><input type=text name=qual size=5>
+</td></tr>
+
+<tr>
+<td colspan=6 width=100% bgcolor=#3055A3 >
+<font face=Verdana>
+<p align=center><b>
+<font face=Verdana color=WHITE >
+Process
+</font></b></p>
+</td></tr>
+
+</table>
+<table border=1 width=100%
+ bordercolordark=#3055A3  bordercolorlight=#3055A3 >
+<tr>
+<tr><td width=50%><b>Step 8: Process Search:</b></td>
+<td width=50%>
+<input type=Submit value="Submit Search" onclick=submit_click()>
+<input type=reset value="Reset - New Search">
+</td></tr>
+</table>
+<p style="width:800px;">
+NOTE Regarding declaration of "non-useable":
+ The most recent SR1As (any sale with a Deed Date after the most recent 
+ June 30th) does not reflect ongoing usability investigations.
+ As such.
+ this is a working file that has not yet been finalized.
+<br><br>
+NOTE Regarding use of SR1A data for assessment appeals:
+ Assessments are not acceptable as evidence of value and not all sales are 
+ usable.
+ Only transactions that have a sale price that reflects the true market value 
+ of the property are usable as comparable sale evidence.
+ Sales that have been marked as "nonusable" by the Assessor for purposes of 
+ determining assessment sales ratios pursuant to N.J.S.A.
+ 54:1-35.1 may be considered by the Board as evidence of true market value.
+ When such sales are utilized, both the Assessor and the property owner must
+ be prepared to support the inclusion or exclusion of such sales evidence as
+ proof of true market value.
+<br><br>
+</p>
+</form>
+</div>
+<div id=waitdiv style=visibility:hidden>
+   Searching....
+</div>
+</body>
+</html>

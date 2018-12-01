@@ -1,0 +1,31 @@
+package practice;
+
+public class SortDescending {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] AscSorted = AscBubbleSort ({3,65,8,1,4,7,8});
+		
+
+	}
+	
+	public static int[] AscBubbleSort (int[] inputArray) {
+		int j = 0;
+	      int tmp;
+	      boolean sorted = false;
+	      while (!sorted) {
+	         sorted = true;
+	         j++;
+	         for (int i = 0; i < inputArray.length - j; i++) {
+	            if (inputArray[i] > inputArray[i + 1]) {
+	               tmp = inputArray[i];
+	               inputArray[i] = inputArray[i + 1];
+	               inputArray[i + 1] = tmp;
+	               sorted = false;
+	            }
+	         }
+		
+	      }
+	}
+
+}

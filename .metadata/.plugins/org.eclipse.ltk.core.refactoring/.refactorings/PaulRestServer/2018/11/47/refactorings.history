@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;time_util.java&apos; to &apos;NJPropertyTaxRed/src/client.utilities&apos;&#x0D;&#x0A;- Original project: &apos;PaulRestServer&apos;&#x0D;&#x0A;- Destination element: &apos;NJPropertyTaxRed/src/client.utilities&apos;&#x0D;&#x0A;- Original element: &apos;sample.hello.util.time_util.java&apos;" description="Copy compilation unit" destination="=NJPropertyTaxRed/src&lt;client.utilities" element1="/src&lt;sample.hello.util{time_util.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1542688208197" units="1" version="1.0"/>
+</session>

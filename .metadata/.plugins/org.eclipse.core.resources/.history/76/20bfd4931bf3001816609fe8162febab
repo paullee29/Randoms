@@ -1,0 +1,22 @@
+package client.Main;
+
+import org.junit.Assert;
+
+import com.gargoylesoftware.htmlunit.*;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+public class HTMLUnit {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try (final WebClient webClient = new WebClient ()) {
+	        final HtmlPage page = webClient.getPage("http://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?&ms_user=monm&passwd=data&srch_type=0&adv=2&out_type=0&district=1204");
+	        Assert.assertEquals("NJ Assessment Records Search", page.getTitleText());
+
+
+			
+		}
+
+	}
+
+}

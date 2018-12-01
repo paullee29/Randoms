@@ -1,0 +1,10 @@
+package client.Main;
+
+public class SocrataTax {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

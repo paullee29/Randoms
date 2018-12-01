@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://igneous-capsule-105817.appspot.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Paul's Udacity Nanodegree Project</title>
+		<link style="text/css" rel="stylesheet" href="./Paul&#39;s Udacity Nanodegree Project_files/styles.css">
+		<script src="./Paul&#39;s Udacity Nanodegree Project_files/jquery.js.download" type="text/javascript"></script>
+
+		<script type="text/javascript">		
+		$(document).ready(function() {		
+			$('#inner').fadeOut('slow',function(){	
+			$('#inner').html($('#home').html()); // loads default page
+		        $('#inner').fadeIn('slow'); 
+		    });
+			$('li').hover(function() {
+				$(this).find('ul>li').fadeToggle(400);   //hover script
+				}); 
+		    $('#linkLesson-1').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#Lesson-1').html());
+		               $('#inner').fadeIn('slow');
+		        }); });            
+		    $('#linkLesson-2').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#Lesson-2').html());
+		               $('#inner').fadeIn('slow');
+		        }); });
+		     $('#linkLesson-3').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#Lesson-3').html());
+		               $('#inner').fadeIn('slow');   
+				}); });
+		    $('#linkLesson-4').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#Lesson-4').html());
+		               $('#inner').fadeIn('slow');
+		        }); });
+		    $('#linkLesson-5').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#Lesson-5').html());
+		               $('#inner').fadeIn('slow');
+		        }); });
+		    $('#linkabout-me').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#aboutme').html());
+		               $('#inner').fadeIn('slow');
+		        }); });
+		    $('#linkhome').click(function(){
+		        $('#inner').fadeOut('slow',function(){	
+		            $('#inner').html($('#home').html());
+		               $('#inner').fadeIn('slow');
+		        });        
+		    }); 
+		})
+		</script>
+		<script>
+			function changeImage() {
+			    var image = document.getElementById('myImage');
+			    if (image.src.match("bulbon")) {
+			        image.src = "images/pic_bulboff.gif";
+			    } else {
+			        image.src = "images/pic_bulbon.gif";
+			    }
+			}
+		</script>
+	<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+
+<body>
+	<header>
+		<div class="Title">
+			Paul's Udacity<br>Nanodegree Project
+<!-- Navigator Bar -->
+				<div class="nav">
+					<ul>
+						<li><a href="http://igneous-capsule-105817.appspot.com/" id="linkhome">Home</a></li>
+						<li><a href="http://igneous-capsule-105817.appspot.com/#">Lessons</a>
+							<ul>
+								
+    <li><a href="http://igneous-capsule-105817.appspot.com/#" id="linkLesson-1">Lesson 1</a>
+        
+    </li>
+    <li><a href="http://igneous-capsule-105817.appspot.com/#" id="linkLesson-2">Lesson 2</a>
+        
+    </li>
+    <li><a href="http://igneous-capsule-105817.appspot.com/#" id="linkLesson-3">Lesson 3</a>
+        
+    </li>
+    <li><a href="http://igneous-capsule-105817.appspot.com/#" id="linkLesson-4">Lesson 4</a>
+        
+    </li>
+    <li><a href="http://igneous-capsule-105817.appspot.com/#" id="linkLesson-5">Lesson 5</a>
+        
+    </li>
+
+							</ul>
+						</li>
+						<li><a href="http://igneous-capsule-105817.appspot.com/#" id="linkabout-me">About Me</a></li>
+
+					</ul>
+				</div>
+<!-- End of Navigator Bar -->
+		</div>
+
+	</header>
+		
+
+
+<div id="outer">
+	<div id="inner" style="display: block;">
+			<div class="container">
+				<div class="Greeting">
+					<p>Welcome to my Page!</p>
+						<div class="InnerTOC">
+							<p>This webpage uses Python with Google App Engine (GAE) as the server, while Jinja2 is used for templating,  CSS was used to control styling, and JQuery is used to load the different content. JQuery was also used for the navigation bar animations giving a smoother user experience. I combined the use of GAE Datastore to store the comments and Geo Point Locations of users leaving comments. IP address were translated into Geo Coordinates via Host IP's API and mapped with Google Map API.</p>
+							<br><br>
+							<b>Stay Tuned for more Updates!</b>
+						</div>
+				</div>
+<!-- Insert Picture Scroller, have not inserted yet -->
+				<div class="PictureScroller">
+
+				</div>
+<!-- End of Picture Scroller -->
+			</div>
+<!-- Start of Comments Box -->
+		<div class="container">
+			<div class="Comment">
+				<form method="post" action="http://igneous-capsule-105817.appspot.com/sign?" height="">
+					<div>
+						<label> 
+							Please leave me comments:<br><br>						
+								<textarea name="post_content" rows="3" cols="60" class="TextBox"></textarea>
+						</label>
+					</div>
+
+					<div>Your Name: 
+						<input type="text" name="user" value="Anonymous">
+						<input type="submit" class="myButton" value="Post Comment">
+					</div>
+					<br>						
+					<div class="Status">  </div>
+					<br>
+				</form>
+					
+				<div class="commentbox">
+					<form method="get" action="http://igneous-capsule-105817.appspot.com/?">
+						
+						<br>
+
+							<div>Hello!</div>
+							<div class="User">By <b>Hola</b> at 2018-10-29</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Hello!</div>
+							<div class="User">By <b>Anonymous</b> at 2018-10-29</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Like the site, great job~</div>
+							<div class="User">By <b>Colette</b> at 2015-10-03</div>
+						
+						<br>
+						
+						<br>
+
+							<div>From another VPN</div>
+							<div class="User">By <b>Paul</b> at 2015-10-01</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Trying to add new pin</div>
+							<div class="User">By <b>Paul</b> at 2015-10-01</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Wishing and trying to put a new pin on the map!</div>
+							<div class="User">By <b>Anonymous</b> at 2015-10-01</div>
+						
+						<br>
+						
+						<br>
+
+							<div>&lt;b&gt; Testing &lt;/b&gt;</div>
+							<div class="User">By <b>Anonymous</b> at 2015-09-30</div>
+						
+						<br>
+						
+						<br>
+
+							<div>hi</div>
+							<div class="User">By <b>thebestest</b> at 2015-09-30</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Logged in from a VPN routed through Germany</div>
+							<div class="User">By <b>Paul</b> at 2015-09-30</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Hello, logged in from school</div>
+							<div class="User">By <b>Paul</b> at 2015-09-30</div>
+						
+						<br>
+						
+					</form>
+				</div>
+			</div>
+				
+				<div class="map">
+				Commenter's Locations!<br>
+					
+					<img src="./Paul&#39;s Udacity Nanodegree Project_files/staticmap" style="display: block; margin: 0 auto;">
+					
+				</div>
+<!-- End of Comments Box -->
+		</div>
+	</div>
+<!-- Start of Home Content -->
+	  	<div style="display:none" id="home">
+			<div class="container">
+				<div class="Greeting">
+					<p>Welcome to my Page!</p>
+						<div class="InnerTOC">
+							<p>This webpage uses Python with Google App Engine (GAE) as the server, while Jinja2 is used for templating,  CSS was used to control styling, and JQuery is used to load the different content. JQuery was also used for the navigation bar animations giving a smoother user experience. I combined the use of GAE Datastore to store the comments and Geo Point Locations of users leaving comments. IP address were translated into Geo Coordinates via Host IP's API and mapped with Google Map API.</p>
+							<br><br>
+							<b>Stay Tuned for more Updates!</b>
+						</div>
+				</div>
+<!-- Insert Picture Scroller, have not inserted yet -->
+				<div class="PictureScroller">
+
+				</div>
+<!-- End of Picture Scroller -->
+			</div>
+<!-- Start of Comments Box -->
+		<div class="container">
+			<div class="Comment">
+				<form method="post" action="http://igneous-capsule-105817.appspot.com/sign?" height="">
+					<div>
+						<label> 
+							Please leave me comments:<br><br>						
+								<textarea name="post_content" rows="3" cols="60" class="TextBox"></textarea>
+						</label>
+					</div>
+
+					<div>Your Name: 
+						<input type="text" name="user" value="Anonymous">
+						<input type="submit" class="myButton" value="Post Comment">
+					</div>
+					<br>						
+					<div class="Status">  </div>
+					<br>
+				</form>
+					
+				<div class="commentbox">
+					<form method="get" action="http://igneous-capsule-105817.appspot.com/?">
+						
+						<br>
+
+							<div>Hello!</div>
+							<div class="User">By <b>Hola</b> at 2018-10-29</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Hello!</div>
+							<div class="User">By <b>Anonymous</b> at 2018-10-29</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Like the site, great job~</div>
+							<div class="User">By <b>Colette</b> at 2015-10-03</div>
+						
+						<br>
+						
+						<br>
+
+							<div>From another VPN</div>
+							<div class="User">By <b>Paul</b> at 2015-10-01</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Trying to add new pin</div>
+							<div class="User">By <b>Paul</b> at 2015-10-01</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Wishing and trying to put a new pin on the map!</div>
+							<div class="User">By <b>Anonymous</b> at 2015-10-01</div>
+						
+						<br>
+						
+						<br>
+
+							<div>&lt;b&gt; Testing &lt;/b&gt;</div>
+							<div class="User">By <b>Anonymous</b> at 2015-09-30</div>
+						
+						<br>
+						
+						<br>
+
+							<div>hi</div>
+							<div class="User">By <b>thebestest</b> at 2015-09-30</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Logged in from a VPN routed through Germany</div>
+							<div class="User">By <b>Paul</b> at 2015-09-30</div>
+						
+						<br>
+						
+						<br>
+
+							<div>Hello, logged in from school</div>
+							<div class="User">By <b>Paul</b> at 2015-09-30</div>
+						
+						<br>
+						
+					</form>
+				</div>
+			</div>
+				
+				<div class="map">
+				Commenter's Locations!<br>
+					
+					<img src="./Paul&#39;s Udacity Nanodegree Project_files/staticmap" style="display: block; margin: 0 auto;">
+					
+				</div>
+<!-- End of Comments Box -->
+		</div>
+	</div>
+<!-- 	End of Home Content -->
+
+
+<!-- Start of Lessons Content -->
+
+  		
+    <div style="display:none" id="Lesson-1"><div class="TOC"><h2>Lesson 1: The Basics Regarding HTML and the Internet
+</h2><div class="InnerTOC">
+            <h3 id="Lesson1-1">How The Web Works
+</h3>
+            <p>The Internet consists of computers that can communicate with each other. When a user wants to go to a webpage like <a target="_blank" href="http://www.udacity.com/">www.udacity.com</a> they use their web browser such as Chrome which sends a HTTP Request to a server. This server using Apache or something similar will find the HTML document and send it to the user's computer, in which the browser can interpret the HTML code and display it on the user's screen.
+</p>
+            <h3 id="Lesson1-2">HTML
+</h3>
+            <p>HTML is the acronym for Hypertext Market Language and is the majority method of how web pages are displayed through your browser. The text content is what the client can read, while the markup describes the method in how it looks, which can be associated with CSS
+</p>
+            <h3 id="Lesson1-3">Tags and Elements
+</h3>
+            <p>HTML documents can take advantage of tags to control the looks and output of the text appearing in the browser. A complete element consists of an opening  closing tag, and content, which may be optional for content less tags.
+</p>
+            <h3 id="Lesson1-4">Computers Can Only Intrepret What You Say
+</h3>
+            <p>Computers are dumb in the sense that they can only intrepret the instructions you give it in a literal sense. For example if you forget to close your bold tag, <b>all your text from then on will be bold</b>.
+</p>
+            <h3 id="Lesson1-5">Inline versus Block Elements
+</h3>
+            <p>A Inline element always starts on a new line and takes up the width of the browser screen, while an Inline element does not start on a new line and only takes up as much width as needed. Block elements can include div, h headings, p, and form, while Inline elements can include span, a, br, and img tags amongst many others
+
+
+</p></div></div>
+    </div>
+    <div style="display:none" id="Lesson-2"><div class="TOC"><h2>Lesson 2: A More In Depth View of HTML and Tools
+</h2><div class="InnerTOC">
+            <h3 id="Lesson2-1">Developer Tools (Browser)
+</h3>
+            <p>Your browswer has the ability to display the HTML code as it was coded for the most part. If not hidden, then the Developer tools (Chrome - F12) you can see the HTML code along with the CSS and the branching system that was used for the structure of the webpage. If you dive deep enough you should be able to see the text displayed on the browser page within the HTML code
+</p>
+            <h3 id="Lesson2-2">Everything Boxes
+</h3>
+            <p>Everything in HTML is arranged in boxes, whether you can visibly see it or not is inconsequential, it provides the structure for the entire page what what is displayed to the user. It allows for modularity and ease of moving different elements on the page. If you look hard enough you should be able to find boxes within boxes
+</p>
+            <h3 id="Lesson2-3">Cascade Style Sheets (CSS)
+</h3>
+            <p>CSS allows for a reduction in repetition for the styling of the text and the webpage. It allows you to tag a "style" to different texts or "boxes" in multiple places without the use of adding the tags each time. By using CSS you can assign different formats to different elements and call up that format whenever you need, with a simple tag or class, rather than writing the complete style each time you need that format. It also makes the code easier on the eys and allows anyone else who views your code to directly refer to the CSS file, rather than rummaging around through your HTML code, which in the end could be very buried and hard to find.
+</p>
+            <h3 id="Lesson2-4">Text Editors
+</h3>
+            <p>As the complexity of your HTML code increases, there is a need for better text editors other than <a target="_blank" href="http://codepen.io/">CodePen</a>, such as <a target="_blank" href="http://www.sublimetext.com/"> Sublime Text</a> allows you to easily create and edit webpages. CodePen provides an environment for one to code and then immediately run it to see the effective code. It can be used for HTML, CSS, and JavaScript. It makes it easier for one to see if individual modules of code works without implementing it with the rest of your code, thereby allowing you effective debugging. They can be referred to as playgrounds or sandboxing. 
+
+
+</p></div></div>
+    </div>
+    <div style="display:none" id="Lesson-3"><div class="TOC"><h2>Lesson 3: Adding CSS Style to HTML Structure
+</h2><div class="InnerTOC">
+            <h3 id="Lesson3-1">Perfect Control
+</h3>
+            <p>CSS allows for perfect control over the: 
+        
+        </p><ol>
+            <li>Property</li>
+            <li>Selector</li>
+            <li>Class</li>
+            <li>ID</li>
+        </ol>
+        
+
+<p></p>
+            <h3 id="Lesson3-2">Colors, Margins, Borders, and Padding
+</h3>
+            <p>The spacing of the text and the div boxes can be completely controlled from margin, to border, to padding. The other appearances such as color, font size, and many other attributes can all be adjusted and tied to a certain selector or class.
+</p>
+            <h3 id="Lesson3-3">Validate Before You Go
+</h3>
+            <p>To ensure your code is correct in all browsers, you can use the W3C Validation Services for HTML and CSS: 
+        
+        </p><ol>
+            <li><a target="_blank" href="https://jigsaw.w3.org/css-validator/">W3C CSS Validation</a></li>
+            <li><a target="_blank" href="https://validator.w3.org/">W3C HTML Markup Validation</a></li>
+        </ol>
+        
+<br> Both of these services will help ensure your code is not only valid but whether or not there will be compatiblity issues with other browsers. Because the browsers, like Google Chrome are fairly robust, there can be missing closing tags, and the HTML will still be rendered properly. The validators will help check for those and indicate where are the issues to ensure maximum compatiblity. It is always good practice to run your code through the validator to find any mistakes that made have been made along the way. 
+<p></p>
+            <h3 id="Lesson3-4">"Structured Code"
+</h3>
+            <p>HTML allows you to structure you code into a tree like structure, therefore leading to higher organization, working from high level down to lower level. This structure allows for universal organization using the Document Object Model in your browser. In developer tools in your favorite browser, it organizes your code into a tree-like stucture. Allowing for divs or lists or content to be nested into the outer contains for organizability.
+
+
+</p></div></div>
+    </div>
+    <div style="display:none" id="Lesson-4"><div class="TOC"><h2>Lesson 4: Python
+</h2><div class="InnerTOC">
+            <h3 id="Lesson4-1">Python Language
+</h3>
+            <p>Python is high level object-oriented scripting programming languages that places priority on code readability. Comapared to C++ or Java, it's syntax allows programmers to use fewer lines of code to achieve their goals. <br>Python language allows the programmer to create a wide array of programs such as calculating the days between 2 dates, automatic HTML documents creation, any other idea someone can come up with.
+
+</p>
+            <h3 id="Lesson4-2">Statements
+</h3>
+            <p>Python has many statements that can be used to express the programmers desires. Thus far the statements we have learned belonged to several of the catagories below: 
+        
+        </p><ol>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_variable_types.htm">Variables Types</a>: By using the (=) sign, one can declare a variable and assign a value to it.</li>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_basic_operators.htm">Basic Operators</a>: standard operators such as arithmetic, comparison (relational), assignment, and logical, operators have already been used. Some of the operators used already include: Addition, modulus, and greater than or less than.</li>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_decision_making.htm">Decision Making</a>: include if, if and else statements that can be nested to make a decision based on a boolean expression.</li>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_loops.htm">Loops</a>: allows you the programmer to run a statement a multiple function multiple times while a certain condition is TRUE. If the conditions are always TRUE, the loop will be infinite. Like If statements, they loops can also be nested. Loop statments include while and for.</li>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_strings.htm">Strings</a>: are one of the most popular types in Python. They are created by enclosing a characters in either single or double quotes. They can be reassigned or updated to a different value.</li>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_lists.htm">Lists</a>: is basically a list of things that may contain numbers or strings. Each number or string may be referenced by the referencing the position of the specified element.</li>
+            <li><a target="_blank" href="http://www.tutorialspoint.com/python/python_functions.htm">Functions</a>: allows for the generation of different reusable code to perform a single or multiple actions. It allows for modularity letting the programmer use the function as many times as he or she needs within their program. It can be called by other functions and is preceded by the keyword def.</li>
+        </ol>
+        
+
+
+<p></p>
+            <h3 id="Lesson4-3">Modularity
+</h3>
+            <p>Python allows easy organization and easier debugging by using modularity. Multiple functions can be created and they can take advantage of each other.
+</p>
+            <h3 id="Lesson4-4">Documentation
+</h3>
+            <p>It is extremely improtant to write comments into your code to allow for easier understanding of what each function or line of code does. In Java, the IDE usually allows for a documentation mode that will list all the classes and methods to allow easier understanding of the programming. Like Java, it is imperative for the programmer to write this documentation not only for other potential readers, but his or herself as they will most likely not remember what they have done.
+
+</p>
+            <h3 id="Lesson4-5">Web Development
+</h3>
+            <p>Python helps simplify web development with a host of different tools such as Google App Engine and Jinja2. With the use of templates, a lot of html code can be produced without manually typing in all the tags, once is all it takes. 
+
+</p>
+            <h3 id="Lesson4-6">Inheritance
+</h3>
+            <p>Inheritance allows for the use of a base code or template for html so that methods can be called from either a class or a python file repeatidly without explicitly defining the method within the same file. For HTML templates, it allows for the passing of different html files into a main one for quicker coding. Inheritance is a major key point in object oriented programming and allows for encapsulation or abstraction.
+</p>
+            <h3 id="Lesson4-7">Forms
+</h3>
+            <p>For users to interact with HTML webpages, one can embed forms into their code. This lets the Webserver interact with the input and be able to manipulate certain things such as a shopping list. Because a form simply passes on whatever is entered into the box when not a drop down menu, malicious code can be entered such as code written in Javascript. This becomes a security concern as one can cause the server to react differently and maybe return information that was supposed to be secure. With that Escapes can be used, and with different codes such as Jinja2 or Python, they have built in functions to prevent this such as Autoescape (Jinja2) or <a target="_blank" href="http://igneous-capsule-105817.appspot.com/Python&#39;s%20(https://docs.python.org/2/library/cgi.html">Common Gateway Interface Support</a>.
+
+</p>
+            <h3 id="Lesson4-8">Web Servers
+</h3>
+            <p>A webserver is a computer or multiple computers that hosts the webserver such as Apache to process requests received from client browsers such as Chrome or Internet Explorer. The user can put in a web address such as www.google.com, but it actually gets translated into an IP address such as 64.233.160.0 by a Domain Name Service or DNS. This DNS is implemented by your browser and is usually set by your Internet Service Provider such as Comcast which is passed to your router. You have the option to use another DNS service, but you will have to manually put this in. <br>
+When the user tries to view a webpage through their browser, the browser sends a GET request to the server asking for the content to be sent and displayed on the browser. When the user is trying to 
+
+In HTML, GET and POST are two different commands sent to the web server. GET requests data and puts the request into the URL, while POST submits data to actually be processed by the server. There are several key differences, GET has a max URL length of 2000 characters and for Webcrawlers it is ok for them to cache, but for POST there is no max length and it is no ok to cache as if you were to reload the page, it will ask you if you want to resubmit the data. GET pages can be bookmarked, while POST cannot. <br><br>
+One thing to note is that GET is not secure because it sends the password as part of the URL, you should never use GET when sending a password or sensitive information. POST at least not put the information you are submitting into the URL.  
+
+</p>
+            <h3 id="Lesson4-9">Validating User Input
+</h3>
+            <p>It is important to validate user import in multiple ways, first to make sure there are no blank values where something is required and second to ensure that whatever they enter into the box or URL cannot affect the outcome such as breaking the HTML. In cases where "&lt;" or a rogue "&amp;" can affect the outcome of what is displayed to the user, this is known as a markup-based security attack. If your server does not check and correct for those cases, HTML code in addition with your server code could be leaked. It could potentially ruin what is displayed to the user through the browser since one bracket could totally change things. This could potentially be a security risk and it has been shown that hackers can use these methods to retrieve secrets and and attack the server. An example could be that in a field where only numbers are accepted, the server needs to ensure that only numbers are entered, it should do a check and if the input it something other than a number, it should send an error message and not POST that particular content. 
+
+</p>
+            <h3 id="Lesson4-10">Jinja2 and Templating
+</h3>
+            <p><a target="_blank" href="http://www.jinja.poc.org/">Jinja2</a> is a modern templating language for Python to to use to develop HTML. It allows for variables to be passed through the Python code into the HTML file for further processing where HTML tags such as DIV can be added without manual interaction. Jinja2 through the use of templates can help run a FOR loop of a dataset within the HTML passed in from GET request. This allows for the use of one set of tags to be repeated to create a list or a set of objects to be displayed. It completely negates the need to repeat the typing of multiple tags. <br><br>The HTML templates allows the server to pick and choose different templates to display to the user based on on the requests, allowing for full automation of the HTML coding in the end. Just write it once, and it can dynamically change according to what the user POSTs in or even from the server side. The HTML templates uses a base HTML document where multiple templates can be imported in. 
+
+</p>
+            <h3 id="Lesson4-11">Google App Engine
+</h3>
+            <p><a target="_blank" href="http://www.cloud.google.com/appengine/docs">Google App Engine</a> lets you build and run applications using Google's services. It has software development kits (SDK) for languages such as PHP, Python, Java, and Go. For the Udacity Nanodegree program, it allows us to use Python code to create HTML that can be hosted either on our own computers or Google's servers. Google App Engine allows you to host. your webpage on your own computer first via local browsing on a open port. Once you are satisfied, you can deploy to appspot.com to allow everyone else to view your work!
+
+
+</p>
+            <h3 id="Lesson4-12">Databases
+</h3>
+            <p>Database programs such as SQL, NoSQL, Oracle, and PostgreSQL can take the inputs and outputs of a program and store them in a database or Table to be called upon later when needed. For Python, there is an SQL module that can be imported to interact with a table. A non-relational database that is used is Google's Datastore, where they store the data on their servers. 
+
+
+
+
+</p></div></div>
+    </div>
+    <div style="display:none" id="Lesson-5"><div class="TOC"><h2>Lesson 5: Next Steps
+</h2><div class="InnerTOC">
+            <h3 id="Lesson5-1">JavaScript
+</h3>
+            <p><a target="_blank" href="http://www.w3schools.com/js/">JavaScript</a> is a high level, dynamic, interpreted programming language that is one of the three essential elements of World Wide Web content. Combined with HTML and CSS and a backend language, JavaSCript can be found a majority of modern websites. It is supported by all modern web browsers without the use of downloadable plug-ins. Unlike Python or Java, it does not have classes, but pseudo classes can be mimicked thus supporting object oriented, imperative, and functional programming styles. JavaScript unlike Python, C++, or Java is a prototype-based object-oriented programming which uses prototype instead of classes for inheritance. One major key point of JavaScript is the absence of inheritance. It can be be used to work with text, dates, arrays, and regular functions/expressions, but it does not include any file I/O, thus relying on the server host environment to handle those tasks. Aside from <a target="_blank" href="https://nodejs.org/en/">Node.js</a>, JavaScript is run on the client side, thus minimizing load on the server. JavaScript allows changes to made to the HTML on the client side without posting or getting from the server, therefor reducing load. It allows for highly interactive pages such as the below bulb. Click on the bulb to turn it on off.<br><br>
+
+</p><div class="images"><img id="myImage" onclick="changeImage()" src="./Paul&#39;s Udacity Nanodegree Project_files/pic_bulboff.gif" width="100" height="180"></div><br>
+<br>
+In the above case, it uses JavaScript to perform an action upon clicking the item changing the image itself from one that appears off to one that appears on. It is important to know that the browser is not actually reloading the page itself, thus performing the clicking action does not actually send commands to the server for refreshed data. This can provide a user a much more fluid response, since there will be no latency involved in trying to retrieve data.
+
+
+
+
+
+<p></p>
+            <h3 id="Lesson5-2">API and JSON
+</h3>
+            <p>Advanced Program Interface (API) when you have a website that is trying to process or retrieve data from somewhere else such as video data from YouTube you can use the <a target="_blank" href="https://developers.google.com/youtube/">YouTube API</a> add more functionality into your own page. The YouTube API allows one to embed a player that can play YouTube videos in addition to adding YouTube Data, where users can search content, upload videos, create, and manage playlists. You can embed the video player into your HTML via iFrames for HTML5, or into a Android, or iOS app. Using the YouTube API, certain parameters can be controlled such as size, whether the video is played within your browser or pops out a standalone player. APIs allow some operations, inputs, and outputs to be processed by the API and be displayed on your website. APIs are not only used for web, but can be found in many other places such as automatic data dumping from software. Many companies who want their websites and server's data or information to be pulled and displayed somewhere else will create an API to use. APIs can be used in not just web applications. Such as Bloomberg's Microsoft Excel API, it allows for data streams to be dumpred into Excel spreadsheets where automated macros can process the data for easier understanding. <br><br>
+
+In some cases such as trying to get flight data from another website, JavaScript Object Notation (<a target="_blank" href="http://www.json.org/">JSON</a>) can be used to parse data from. JSON can take on forms such as objects which can include strings and values, an array, a value, strings, or just a number. JSON can be used with a variety of languages including all the major ones such as ASP, C, C++, Adobe ColdFusion, Java, JavaScript, Python Ruby, Scala, and many more. It allows for easy parsing of data, where it can be processed on another server. It uses readable text to transmit data objects that are made up of attributes-value pairs. By using JSON format one can easily arrange their data, thus allowing better readability with other websites. JSON has libraries for many programming langauges with fairly standard commands. Some websites have their data in JSON format where you can use your website to parse the data such as <a target="_blank" href="https://www.reddit.com/.json">reddit's JSON</a>. By using the JSON one can easily find particular data they are looking for and manipulate it to create readable content. It is "self-describing", easy to understand, langauge dependent, and extremely lightweight.
+
+</p>
+            <h3 id="Lesson5-3">Recursion and Parallel Computing
+</h3>
+            <p>In all cases of computer programming, by using procedures, if, and arithmetic, all programs can be written, however tedious. With the introduction of while, much more can be done, easily, but with by using recursion, one can continuously use a function combined with if to achieve your goals. By using recursion, it allows for elegant and powerful methods to solve many issues. A recursive function requires two parts: 
+        
+        </p><ol>
+            <li>Base Case: a starting point that it is not defined in terms of itself.</li>
+            <li>Recursive Case: defined in terms of a smaller version of itself, where the rules can reduce all other cases towards the base case.</li>
+        </ol>
+        
+
+
+<p></p>
+            <h3 id="Lesson5-4">Solving Big Problems
+</h3>
+            <p>In most cases, a program is not as simple as the ones that Udacity's Nanodegree covers, so it is important to be able to break down large problems into smaller sections. By breaking down the project and the code into seperate sections it allows for modularity and easier debugging. Additionally it makes it easier for multiple people to work on the same project. By breaking down large problems into smaller ones, one can try each module seperately to ensure they are working properly before progressing onto the next part of the problem. In the end they can all be tied together with even maybe one function. It cannot be stressed enough to make sure that one breaks down a large problem into smaller problems, especially when one is lost. By breaking it down, one can tackle each one seperately in much more managable chunks.
+
+</p></div></div>
+    </div>
+
+<!-- 	End of Lessons Content -->
+
+
+<!-- Start of About Me Content -->
+	<div style="display:none" id="aboutme">
+		<div class="container">
+			<div class="Greeting">
+				<p style="color:white">Hello my name is Paul.</p>
+						<div class="InnerTOC">
+							<p>I have always been interested in software development and made this page to implement some of the skills I have learned throughout my training. I am engineer that leverages years of academic, venture, and industrial experience with knowledge in software development to bring innovative problem solving skills to add value to any organization. I was an associate for a venture capital group, but now want to make the switch to software engineering as I have found my passion is in software development.</p>
+							<br>
+					<!-- 		<p>My experience includes:</p>
+								<ul>
+									<li>Managed 10+ portfolio companies and projects that had a total investment of over $2.5 million</li>
+									<li>Managed 10+ portfolio companies and projects that had a total investment of over $2.5 million</li>
+									<li>1 granted patent, 10 published papers (4 first author), and 2 published book chapters</li>
+									<li>Knowledge in several computer languages such as Java, Python, and HTML</li>
+								</ul> -->
+							<br><br>
+							<b>Stay Tuned for more Updates!</b>
+						</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!-- End of About Me Content -->
+
+
+
+
+
+	<div id="footer">By Paul Lee</div>
+
+
+</body></html>

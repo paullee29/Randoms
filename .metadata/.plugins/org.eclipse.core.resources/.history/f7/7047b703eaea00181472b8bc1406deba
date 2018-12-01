@@ -1,0 +1,21 @@
+package client.Main;
+
+import java.io.BufferedReader;
+
+import client.Main.HttpURLConnectionRequest;
+
+public class Parser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String url = null;
+		BufferedReader input = new BufferedReader(System.in);
+		
+		HttpURLConnectionRequest connection = new HttpURLConnectionRequest();
+		connection.sendGet();
+		
+
+	}
+
+}

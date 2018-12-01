@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/activation.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/commons-validator-1.4.0.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/imap.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jackson-core-asl-1.7.4.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jackson-jaxrs.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jackson-mapper-asl.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jackson-xc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jersey-client.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jersey-core-1.8.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jersey-json-1.8.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jersey-server-1.8.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jettison-1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/Paul/CloudStation/JAVA SAMPLE/RestServer/lib/smtp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

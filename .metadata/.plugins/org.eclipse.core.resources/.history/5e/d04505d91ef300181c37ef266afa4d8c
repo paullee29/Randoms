@@ -1,0 +1,29 @@
+package client.Main;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.junit.Assert;
+
+import com.gargoylesoftware.htmlunit.html.*;
+
+
+public class HTMLUnit {
+
+	public static void main(String[] args) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
+		// TODO Auto-generated method stub
+		try (final WebClient webClient = new WebClient ()) {
+	        final HtmlPage page = webClient.getPage("http://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?&ms_user=monm&passwd=data&srch_type=0&adv=2&out_type=0&district=1204");
+	        Assert.assertEquals("NJ Assessment Records Search", page.getTitleText());
+	        System.out.println(page.getTitleText());
+
+	        HtmlForm form = page.getFormByName("form1");
+	        
+	        HtmlTextInput textField = form.getInputByName("userid");
+
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package practice;
+
+public class Practice {
+
+	public static void main(String[] args) {
+		int [] a = {2, 1, 3, 5, 3, 2};
+		
+		// TODO Auto-generated method stub
+	    int bestindex = a.length+1;
+	    int currentindex = -1;
+	    int dup = -1;
+	    int z = 1;
+	    for (int i :a) {
+	 
+	        for (int zz=z; z <a.length; z++) {
+	            
+	            if (a[z]==i) {
+	                if (currentindex<bestindex){
+	                    bestindex = zz;
+	                    dup = i;
+	                }                   
+	            }
+	 
+	        }
+	    z+=1;
+	        
+	    }
+	    System.out.println(dup);
+
+	}
+
+}

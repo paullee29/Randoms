@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+<project name="RESTFul Service " default="build" basedir=".">
+
+	<property name="build.root"		value="${basedir}" /> 
+	<property name="build.output.dir"	value="${build.root}/build"/>
+	<property name="deploy.dir"		value="${basedir}"/>
+	<property name="dev.dir"		value="${basedir}"/>
+	<!--
+	Suck in the environment stuff
+	-->
+	<property environment="env"/>
+
+	<!--
+	Setup our class paths.  Please note that for documentation
+	purposes, I am explicitly listing which jars are used to
+	build this package
+	-->
+	<echo message="${build.root}"/>
+		<path id="build.classpath">
+			<fileset dir="${build.root}/lib">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+
+
+	<target name="_init_build_env" depends="" description="Creates target build directories which will be zipped">
+		<!-- Create target directories -->
+		<mkdir dir="${build.output.dir}"/>
+		<mkdir dir="${build.output.dir}/data"/>
+		<mkdir dir="${build.output.dir}/script"/>
+		<mkdir dir="${build.output.dir}/bin"/>
+		<mkdir dir="${build.output.dir}/log"/>
+	
+	</target>
+
+
+	<target name="build" depends="_init_build_env, compile" description="This will build everything but the tests.">
+
+		<copy todir="${build.output.dir}/lib">
+			<fileset dir="${build.root}">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.output.dir}/script">
+			<fileset dir="${build.root}/script">
+				<include name="*"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.output.dir}/data">
+			<fileset dir="${build.root}/data">
+				<include name="*"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.output.dir}/doc">
+			<fileset dir="${build.root}/doc">
+				<include name="*"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${build.output.dir}/bin">
+			<fileset dir="${build.root}">
+				<include name="run_ats.bat"/>
+				<include name="SCRIPTS.help"/>
+				<include name="README.txt"/>
+				<include name="SERVICES.help"/>
+				<include name="report.xml"/>
+			</fileset>
+			</copy>
+
+		<chmod dir="${build.output.dir}" perm="ugo+wrx"  includes="**/*.*"/>
+
+		<property name="service.server.file.name" value="RESTServer"/>
+		<zip destfile="${deploy.dir}/DISTRO/${service.server.file.name}.zip">
+			<zipfileset dir="${build.output.dir}" prefix="${service.server.file.name}"/>
+			<zipfileset dir="${build.root}/data" prefix="${service.server.file.name}/data"/>
+			<zipfileset dir="${build.root}/doc" prefix="${service.server.file.name}/doc"/>
+			<zipfileset dir="${build.root}/script" prefix="${service.server.file.name}/script"/>
+			<zipfileset dir="${build.root}/lib" prefix="${service.server.file.name}/lib"/>
+		</zip>
+
+	</target>
+
+	<target name="build-dev" depends="_init_build_env, compile" description="This will build everything but the tests.">
+
+		<copy todir="${build.output.dir}">
+			<fileset dir="${build.root}">
+				<include name="lib/*.jar"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${build.output.dir}/bin">
+			<fileset dir="${build.root}">
+				<include name="run_ats.bat"/>
+				<include name="SCRIPTS.help"/>
+				<include name="README.txt"/>
+				<include name="SERVICES.help"/>
+				<include name="report.xml"/>
+			</fileset>
+			</copy>
+
+		<chmod dir="${build.output.dir}" perm="ugo+wrx"  includes="**/*.*"/>
+
+		<property name="service.server.file.name" value="ATS_CLIENT"/>
+		<zip destfile="${dev.dir}/DISTRO/${service.server.file.name}.zip">
+			<zipfileset dir="${build.output.dir}" prefix="${service.server.file.name}"/>
+			<zipfileset dir="${build.root}/data" prefix="${service.server.file.name}/data"/>
+			<zipfileset dir="${build.root}/doc" prefix="${service.server.file.name}/doc"/>
+			<zipfileset dir="${build.root}/script" prefix="${service.server.file.name}/script"/>
+			<zipfileset dir="${build.root}/lib" prefix="${service.server.file.name}/lib"/>
+		</zip>
+	</target>
+
+
+	<target name="compile" depends="" description="This compiles the sources.">
+
+		<!-- Compile all java files -->
+		<!--  not to include the java in sub_dir includes="**/*.java" -->
+		<javac srcdir="${build.root}/src"
+		destdir="${build.output.dir}/bin"
+		includes="**/*.java"
+		excludes="**/OSLServlet/**,**/PreferenceServiceNavigator/**"
+		classpathref="build.classpath"
+		compiler="modern"
+		includeAntRuntime="off"
+		includeJavaRuntime="off"
+		nowarn="on"
+		optimize="on"
+		debug="on"
+		verbose="off"
+		deprecation="on">
+
+		<compilerarg value="-Xlint:-unchecked"/>
+		</javac>
+		<jar destfile="${basedir}/build/paul_rest.war"
+			basedir="${basedir}/build"
+			includes="**/*.class"/>
+	</target>
+	<!--
+	Standard clean target.
+	-->
+	<target name="clean" depends="" description="Cleans derived directories.">
+		<delete dir="${build.output.dir}"/>
+	</target>
+
+</project>
